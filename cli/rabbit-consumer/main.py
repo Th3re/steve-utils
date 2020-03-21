@@ -34,7 +34,7 @@ def main():
     for binding_key in env.binding_keys:
         channel.queue_bind(exchange=env.exchange, queue=queue_name, routing_key=binding_key)
 
-    print(' [*] Waiting for logs. To exit press CTRL+C')
+    print(' [*] Waiting for messages. To exit press CTRL+C')
 
     channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
 
