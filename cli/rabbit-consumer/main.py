@@ -13,9 +13,9 @@ class Environment:
 
 def read_environment():
     return Environment(
-        host=os.environ.get("HOST"),
-        exchange=os.environ.get("EXCHANGE"),
-        binding_keys=os.environ.get("BINDING_KEYS")
+        host='localhost',
+        exchange='location',
+        binding_keys='location.*'
     )
 
 def callback(ch, method, properties, body):
